@@ -9,28 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
-    <title>StudyBuddy - Find study partners around the world!</title>
+    <title>ChatBud - Find chat partners around the world!</title>
   </head>
 
   <body>
-    
-
-    {% include 'navbar.html' %}
-
-    {% if messages %}
+    {% include 'navbar.html' %} {% if messages %}
     <ul class="messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-            {% endfor %}
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
     </ul>
-    {% endif %}
+    {% endif %} {% block content%} {% endblock content%}
 
-
-    {% block content%}
-
-
-    {% endblock content%}
-    
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
